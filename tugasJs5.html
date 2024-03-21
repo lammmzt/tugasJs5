@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Belajar JQuery</title>
+		<style>
+			#div1 {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				cursor: pointer;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="" id="div1">Hewan Bebek</div>
+
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.js"
+			integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			$(document).ready(function () {
+				var audio = new Audio("Assets/Music/duck.mp3");
+				$("#div1").mouseover(function () {
+					$(this).css({
+						background: "url('Assets/Images/duck.jpg') no-repeat center center",
+						width: "200px",
+						height: "200px",
+						border: "1px solid #000",
+						cursor: "pointer",
+					});
+					audio.play();
+				});
+				$("#div1").mouseout(function () {
+					$(this).css({
+						background: "",
+						width: "200px",
+						height: "200px",
+						border: "1px solid #000",
+						cursor: "pointer",
+					});
+					audio.pause();
+				});
+			});
+		</script>
+	</body>
+</html>
